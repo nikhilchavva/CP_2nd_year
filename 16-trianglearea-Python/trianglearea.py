@@ -5,5 +5,20 @@
 
 
 def trianglearea(s1, s2, s3):
-	# your code goes here
-	pass
+
+	s=(s1+s2+s3)/2	
+	b=s-s1
+	c=s-s2
+	d=s-s3
+	e=(s*b*c*d)**0.5
+	# print(e)
+	# b=a**0.5
+
+	return e
+
+print(trianglearea(4, 13, 15))
+	# s=s1+s2+s3/2
+	# print(s)
+
+	# a=((s(s-s1)*(s-s2)*(s-s3))**0.5)
+	# return a
