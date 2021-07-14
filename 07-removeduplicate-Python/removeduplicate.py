@@ -4,5 +4,38 @@
 # The second or further occurrence of duplicate should be removed.
 
 def removeduplicate(text):
-	# Your code goes here
-	pass
+	s=''
+
+	for i in text:
+		
+		if i not in s:
+			s=s+i
+	return s
+	
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# m=set(text)
+	# n=str()
+	# for i in m:
+	# 	n=n+i
+	# # a=m.intersection(set(n))
+
+	
+	# return n
