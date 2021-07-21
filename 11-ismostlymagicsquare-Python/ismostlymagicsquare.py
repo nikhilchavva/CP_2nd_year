@@ -15,4 +15,24 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	leftdiag=0
+    rightdiag=0
+    n=len(arr)
+    for i in range(n):
+        leftdiag +=arr[i][i]
+        rightdiag+=arr[i][n-i-1]
+    if leftdiag != rightdiag:
+        return False
+    
+    
+    for i in range(n):
+        row=0
+        col=0
+        for j in range(n):
+            row+=arr[i][i]
+            col+=arr[j][i]
+            
+        if row!= leftdiag and col!=leftdiag:
+            return False
+    return True
+	
