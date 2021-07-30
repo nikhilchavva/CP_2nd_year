@@ -12,6 +12,10 @@
 
 def areAnagrams(s1, s2):
     # Your code goes here...
-    pass
-
+if len(s1)!= len(s2):
+            
+            return False
+        
+        elif sorted(s1)==sorted(s2):
+            return True
 # write your test cases here...
