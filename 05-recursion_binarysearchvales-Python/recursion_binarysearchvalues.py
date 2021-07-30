@@ -17,7 +17,45 @@
 #     assert(binarySearchValues(L, v) == [(2,'f'), (0,'a'), (1,'c')])
 # Hint: Do not slice the list L, but rather adjust the indexes into L. 
 
-def recursion_binarysearchvalues(L, v):
-	# Your codes goes here
-	pass
+def readList():
+    return input().split(" ")
+
+def recursionBinarySearch(L,v ,b,t, a =[]):
+    # your code goes here
+    
+    middle = (b+t) // 2
+
+    if b<t and L[middle] == v:
+        a.append((middle, L[middle]))
+        return a
+
+
+    elif b == t:
+        a.append((middle , L[middle]))
+        return a
+
+    elif v < L[middle]:
+        a.append((middle, L[middle]))
+        t=middle -1
+
+    else:
+        a.append((middle , L[middle]))
+        b= middle + 1
+
+    return recursionBinarySearch(L, v, b, t, a)
+
+
+def recursionOnlyBinarySearchValues(L, v):
+    A = recursionBinarySearch(L, v , 0, len(L) - 1)
+
+    return A
+
+    
+
+
+print(recursionOnlyBinarySearchValues(readList(), input()))
+
+
+
+	
 	
