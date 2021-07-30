@@ -13,6 +13,42 @@
 # Again, you do not need to sort the list. We didn't sort it in our sample solution. We just tracked the two largest 
 # values as we recursively traversed the list. Also, you may not use loops/iteration in this problem
 
-def recursion_secondlargest(L):
-	# Your code goes here
-	pass
+#codedbynikhil
+def readList():
+    a = []
+    l = int(input())
+    for i in range(l):
+        a.append(int(input()))
+    return a
+#forsecondlarge
+def secondlarge(K,large,second):
+    if len(K)==0:
+        return second
+
+
+    else:
+        if K[0]>second:
+            if K[0]>large:
+                second = large
+                large = K[0]
+
+
+            else:
+                second= K[0]
+
+        return secondlarge(K[1:],large,second)
+
+
+
+ #recursionsecondlargest
+def recursionOnlySecondLargest(L):
+    if len(L)==0 or len(L)==1:
+        return None
+    else:
+        a = secondlarge(L,-100000,-100000)
+    return a
+
+print(recursionOnlySecondLargest(readList()))
+
+
+
