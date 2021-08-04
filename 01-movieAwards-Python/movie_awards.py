@@ -21,4 +21,9 @@ the function should return as follows
 
 def movie_awards(oscarResults):
     # Your code goes here...
-    pass
+    l=list(oscarResults)
+    d=dict()
+    for key,value in l:
+        d[value]=d.get(value,0)+1
+
+    return d
