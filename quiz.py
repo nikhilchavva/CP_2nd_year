@@ -6,7 +6,21 @@
 
 def bestQuiz(l):
     # Your  code goes ehre...
-    pass
+      sums=[]
+      for i in range(len(l[0])):
+            sum=0
+            count=0
+            for j in range(len(l)):
+                  if(l[j][i]!=-1):
+                        sum+=l[j][i]
+                        count+=1
+            if(count!=0):
+                  avg=sum/count
+                  sums.append(avg)
+      if(len(sums)==0):
+            return None
+      m=sums.index(max(sums))
+      return m
 
 def testBestQuiz():
     print('Testing bestQuiz()...', end='')
