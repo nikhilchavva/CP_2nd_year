@@ -7,6 +7,14 @@
 
 # Write your own test cases...
 
-def isLatinSquare(lst):
-    # Your code goes here...
-    pass
+def isLatinSquare(n):
+    var = n + 1
+    for i in range(1, n + 1, 1):
+        temp = var
+        while (temp <= n) :
+            print(temp, end = " ")
+            temp += 1
+        for j in range(1, var):
+            print(j, end = " ")
+        var -= 1
+        print()
