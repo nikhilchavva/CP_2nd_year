@@ -15,8 +15,38 @@
 # string "None"). So, for example:
 
 def topScorer(data):
+    if data == "":
+        return None
     # Your code goes here...
-    return ""
+    lis = data.splitlines()
+    # print(lis)
+    s = ""
+    prev =0
+    temp = ""
+    for i in range(len(lis)):
+        sum = 0
+        l = lis[i].split(",")
+        # print(l)
+        for j in range(1, len(l)):
+            sum+= int(l[j])
+            # temp = l[0]
+        # print(sum, temp)
+        if sum > prev:
+            prev = sum
+            temp = l[0]
+        elif sum == prev:
+            if s == "":
+                s+=temp + ","+ l[0]
+            else:
+                if temp not in s:
+                    s+="," + temp 
+                s+= ","+ l[0]
+    # print(temp, sum)       
+    # print(s) 
+    if len(s)>1:
+        return s   
+    return temp
+    
 
 data = '''\
 Fred,10,20,30,40
